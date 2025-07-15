@@ -93,7 +93,7 @@ const Footer = () => {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {/* Brand */}
           <div className="footer-element">
             <h3 className="text-2xl font-bold gradient-text mb-4">

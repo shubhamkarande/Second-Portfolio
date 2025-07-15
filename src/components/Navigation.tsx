@@ -38,9 +38,9 @@ const Navigation = () => {
       const scrollY = window.scrollY;
       if (scrollY > 100) {
         gsap.to(navRef.current, {
-          backgroundColor: "hsla(240, 8%, 8%, 0.9)",
+          backgroundColor: "rgba(20, 20, 23, 0.9)",
           backdropFilter: "blur(20px)",
-          borderBottom: "1px solid hsl(var(--glass-border))",
+          borderBottom: "1px solid rgba(64, 64, 74, 0.3)",
           duration: 0.3,
           ease: "power2.out"
         });

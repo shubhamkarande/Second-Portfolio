@@ -116,6 +116,17 @@
     animation: float 6s ease-in-out infinite;
     animation-delay: 2s;
   }
+
+  /* Responsive utilities */
+  @media (max-width: 768px) {
+    .text-hero {
+      font-size: clamp(2rem, 8vw, 3.5rem);
+    }
+    
+    .text-section {
+      font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+  }
   
   /* Gradient text */
   .gradient-text {

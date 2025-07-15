@@ -115,7 +115,7 @@ const AboutSection = () => {
             ref={imageRef}
             className="relative"
           >
-            <div className="relative w-80 h-80 mx-auto">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto">
               <div className="absolute inset-0 bg-gradient-neon rounded-full p-1 glow-neon">
                 <div className="w-full h-full bg-background rounded-full overflow-hidden">
                   <img
@@ -159,7 +159,7 @@ const AboutSection = () => {
               <h3 className="text-xl font-semibold text-neon-blue mb-6">
                 Technical Skills
               </h3>
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
                 {skills.map((skill, index) => (
                   <div
                     key={skill.name}

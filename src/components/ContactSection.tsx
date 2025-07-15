@@ -61,7 +61,7 @@ const ContactSection = () => {
         input.addEventListener('focus', () => {
           gsap.to(input, {
             scale: 1.02,
-            boxShadow: "0 0 20px hsl(var(--neon-blue) / 0.3)",
+            boxShadow: "0 0 20px rgba(64, 165, 255, 0.3)",
             duration: 0.3,
             ease: "power2.out"
           });
@@ -83,7 +83,7 @@ const ContactSection = () => {
           gsap.to(icon, {
             scale: 1.2,
             rotation: 5,
-            boxShadow: "0 0 20px hsl(var(--neon-blue) / 0.5)",
+            boxShadow: "0 0 20px rgba(64, 165, 255, 0.5)",
             duration: 0.3,
             ease: "power2.out"
           });
@@ -142,7 +142,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <form 
@@ -150,7 +150,7 @@ const ContactSection = () => {
               onSubmit={handleSubmit}
               className="space-y-6"
             >
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="contact-element">
                   <label className="block text-sm font-medium text-foreground/80 mb-2">
                     Name

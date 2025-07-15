@@ -167,20 +167,18 @@ const ProjectsSection = () => {
 
         <div 
           ref={containerRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {projects.map((project) => (
             <div
               key={project.id}
-              className={`project-card glass-card rounded-2xl overflow-hidden group cursor-pointer ${
-                project.featured ? 'md:col-span-2 lg:col-span-1 lg:row-span-2' : ''
-              }`}
+              className="project-card glass-card rounded-2xl overflow-hidden group cursor-pointer"
             >
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="project-image w-full h-48 lg:h-64 object-cover"
+                  className="project-image w-full h-48 sm:h-56 lg:h-64 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 

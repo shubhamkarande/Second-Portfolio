@@ -71,7 +71,7 @@ const HeroSection = () => {
       const handleMouseEnter = () => {
         gsap.to(ctaButton, {
           scale: 1.05,
-          boxShadow: "0 0 30px hsl(var(--neon-blue))",
+          boxShadow: "0 0 30px rgb(64, 165, 255)",
           duration: 0.3,
           ease: "power2.out"
         });
@@ -80,7 +80,7 @@ const HeroSection = () => {
       const handleMouseLeave = () => {
         gsap.to(ctaButton, {
           scale: 1,
-          boxShadow: "0 0 20px hsl(var(--neon-blue))",
+          boxShadow: "0 0 20px rgb(64, 165, 255)",
           duration: 0.3,
           ease: "power2.out"
         });
@@ -99,7 +99,7 @@ const HeroSection = () => {
   return (
     <section 
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-between px-6 lg:px-20 overflow-hidden"
+      className="relative min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 overflow-hidden gap-8 lg:gap-0"
       data-scroll-section
     >
       {/* Background Elements */}
@@ -138,7 +138,7 @@ const HeroSection = () => {
       {/* 3D Spline Model */}
       <div 
         ref={splineRef}
-        className="relative w-full max-w-2xl h-[600px] hidden lg:block"
+        className="relative w-full max-w-2xl h-[400px] md:h-[500px] lg:h-[600px] order-first lg:order-last"
       >
         <iframe 
           src='https://my.spline.design/orb-4CCbk99W5AktTVpK4DqWzNTA/' 
