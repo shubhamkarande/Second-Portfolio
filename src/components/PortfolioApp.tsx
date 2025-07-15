@@ -19,50 +19,11 @@ const PortfolioApp = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Initialize locomotive scroll when component mounts
-    let locomotiveScroll: any;
-
-    const initSmoothScrolling = async () => {
-      const LocomotiveScroll = (await import('locomotive-scroll')).default;
-      
-      locomotiveScroll = new LocomotiveScroll({
-        el: containerRef.current!,
-        smooth: true,
-        multiplier: 1,
-        class: 'is-revealed',
-        scrollbarContainer: document.querySelector('[data-scroll-container]')
-      });
-
-      // Update ScrollTrigger on locomotive scroll
-      locomotiveScroll.on('scroll', ScrollTrigger.update);
-
-      // Sync ScrollTrigger with locomotive scroll
-      ScrollTrigger.scrollerProxy('[data-scroll-container]', {
-        scrollTop(value) {
-          return arguments.length ? locomotiveScroll.scrollTo(value, 0, 0) : locomotiveScroll.scroll.instance.scroll.y;
-        },
-        getBoundingClientRect() {
-          return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-        },
-        pinType: containerRef.current!.style.transform ? 'transform' : 'fixed'
-      });
-
-      // Refresh ScrollTrigger and locomotive scroll
-      ScrollTrigger.addEventListener('refresh', () => locomotiveScroll.update());
-      ScrollTrigger.refresh();
-    };
-
+    // Simple scroll behavior without locomotive scroll to avoid conflicts
     if (!isLoading) {
-      initSmoothScrolling();
+      // Refresh ScrollTrigger after loading
+      ScrollTrigger.refresh();
     }
-
-    // Cleanup
-    return () => {
-      if (locomotiveScroll) {
-        locomotiveScroll.destroy();
-      }
-      ScrollTrigger.removeEventListener('refresh', () => locomotiveScroll?.update());
-    };
   }, [isLoading]);
 
   const handleLoadingComplete = () => {
@@ -86,8 +47,7 @@ const PortfolioApp = () => {
       
       <div 
         ref={containerRef}
-        data-scroll-container
-        className="overflow-hidden"
+        className="relative"
       >
         <main>
           <section id="home">

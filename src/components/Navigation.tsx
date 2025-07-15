@@ -111,12 +111,13 @@ const Navigation = () => {
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
     
-    // Smooth scroll to section
+    // Smooth scroll to section with offset for fixed nav
     const target = document.querySelector(href);
     if (target) {
-      target.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
+      const offsetTop = (target as HTMLElement).offsetTop - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
       });
     }
   };
